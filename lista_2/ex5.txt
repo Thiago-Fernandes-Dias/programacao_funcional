@@ -1,0 +1,6 @@
+## Função em Haskell
+mult :: Int -> Int -> Int -> Int
+mult x y z = x*y*z
+
+## Função em Cálculo Lambda
+\x -> \y -> \z -> x (y (z INC)) 0
