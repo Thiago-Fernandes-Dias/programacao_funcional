@@ -1,13 +1,25 @@
 module Main where
+import Data.Void
 
-y f = f (y f)
+data Fuzzy = V | F | BelongPC Double deriving Show
 
-fat :: (Eq t, Num t) => (t -> t) -> t -> t
-fat f 1 = 1
-fat f n = n * f (n - 1)
+newtype FuzzyType a = AV a
 
-len = foldr (\n _ -> n + 1) 0
+data Ponto3D = Ponto { coordX :: Double
+                     , coordY :: Double
+                     , coordZ :: Double
+                     }
+
+type ZeroMaisUm = Either Void ()
+
+a = Right () :: ZeroMaisUm
+
+fuzzify :: Double -> Fuzzy
+fuzzify d 
+  | d <= 0 = F
+  | d >= 1 = V
+  | otherwise = BelongPC d
 
 main :: IO ()
 main = do
-    print (y fat 10)
+  print $ fuzzify 0.5
