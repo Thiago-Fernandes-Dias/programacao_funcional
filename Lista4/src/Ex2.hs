@@ -1,7 +1,7 @@
-module Ex2 (lenght1, lenght2) where
+module Ex2 (length1, length2) where
 
-lenght1 :: [a] -> Int
-lenght1 = foldr (\_ n -> n + 1) 0
+length1 :: [a] -> Int
+length1 = foldr (\_ acc -> acc + 1) 0
 
-lenght2 :: [a] -> Int
-lenght2 = foldl (\n _ -> n + 1) 0
+length2 :: [a] -> Int
+length2 = foldl (\acc _ -> acc + 1) 0
