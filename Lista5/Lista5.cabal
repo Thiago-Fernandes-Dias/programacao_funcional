@@ -20,6 +20,21 @@ executable Lista5
   main-is:             Main.hs
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
+  other-modules:       Ex1,
+                       Ex2,
+                       -- Ex3,
+                       -- Ex4,
+                       -- Ex5,
+                       Ex6_9,
+                       Ex7,
+                       Ex8,
+                       Ex10,
+                       Ex11,
+                       Ex12,
+                       Ex13,
+                       Ex14,
+                       Ex15
+                       FunctorExample
   ghc-options:         -Wall
                        -Wcompat
                        -Widentities
