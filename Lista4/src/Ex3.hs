@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
 {-# HLINT ignore "Use minimum" #-}
 
 module Ex3 (minListr, minListl) where

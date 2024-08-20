@@ -2,13 +2,11 @@ cabal-version:       2.2
 
 name:                Lista4
 version:             0.1.0.0
--- synopsis:
--- description:
 homepage:            https://github.com/githubuser/Lista4#readme
 license:             BSD-3-Clause
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
+author:              Thiago Fernandes Dias
+maintainer:          thiago.fernandesdias235@gmail.com
 copyright:           2024 Author name here
 category:            Web
 build-type:          Simple
