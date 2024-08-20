@@ -2,6 +2,7 @@
 
 {-# HLINT ignore "Use concat" #-}
 {-# HLINT ignore "Use <$>" #-}
+{-# HLINT ignore "Use sum" #-}
 
 module Main (main) where
 
@@ -12,7 +13,9 @@ import Ex12 (frutasDaArvore)
 import Ex13 (ZipList (..))
 import Ex14 (Expr (..))
 import Ex15 (Identity (..), Pair (..))
-import Ex2 (delete, fromList, insert, member)
+import Ex20 (Fantasma (..))
+import Ex22 (Memory (..))
+import Ex2_3 (delete, fromList, insert, memberSet)
 import Ex6_9 (Tree (..))
 import Ex7 (arvorePossui)
 import Ex8 (contaLetras)
@@ -25,8 +28,8 @@ main = do
   print $ foldr1 (<>) [Pontuacao 1, Pontuacao 3, Pontuacao 4, Cola]
   print $ foldr1 (<>) [Cola, Pontuacao 1, Pontuacao 3, Pontuacao 4]
   print $ fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1]
-  print $ member 5 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
-  print $ member 9 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
+  print $ memberSet 5 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
+  print $ memberSet 9 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
   print $ insert 9 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
   print $ delete 9 (fromList [1, 1, 3, 3, 4, 5, 6, 4, 4, 8, 8, 1])
   print $ (+ 5) <$> Node (Node (Leaf 5) 5 (Leaf 5)) 5 (Leaf 5)
@@ -44,3 +47,7 @@ main = do
   print (pure (\x y z -> x + y + z) <*> Var 3 <*> Var 3 <*> Add (Val 5) (Var 6))
   print (pure (+) <*> Pair 4 5 <*> Pair 6 5)
   print (pure (+) <*> Identity 4 <*> Identity 5)
+  print (fmap (+) Fantasma)
+  print (pure (+) <*> Fantasma <*> Fantasma)
+  print (traverse (: []) $ SplitCache 5 2 (UnifiedCache 10 (RAM 5)))
+  print (fromList [1, 3, 3, 4] <> fromList [1, 2, 3, 3, 5])

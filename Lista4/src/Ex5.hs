@@ -1,5 +1,7 @@
 module Ex5 (remove) where
 
 remove :: String -> String -> String
-remove "" str = str
-remove str1 str2 = foldr (\n acc -> if elem n str1 then acc else n : acc) [] str2
+remove str1 = foldr (\n acc -> if n `elem` str1 then acc else n : acc) []
+
+-- >>> remove "first" "second"
+-- "econd"

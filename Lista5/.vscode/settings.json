@@ -4,7 +4,9 @@
     "fmap",
     "foldr",
     "HLINT",
+    "ings",
     "mempty",
-    "Pontuacao"
+    "Pontuacao",
+    "Vegano"
   ]
 }

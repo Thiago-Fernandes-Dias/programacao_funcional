@@ -9,4 +9,7 @@ fats 0 = []
 fats n = (1 / fat n) : fats (n - 1)
 
 approxe :: (Eq a, Fractional a) => a -> a
-approxe n = foldl (+) 1 $ fats n
+approxe = foldl (+) 1 . fats
+
+-- >>> approxe 4
+-- 2.7083333333333335
