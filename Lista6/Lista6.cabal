@@ -1,19 +1,21 @@
 cabal-version:       2.2
 
-name:                Lista4
+name:                Lista6
 version:             0.1.0.0
-homepage:            https://github.com/githubuser/Lista4#readme
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/Lista6#readme
 license:             BSD-3-Clause
 license-file:        LICENSE
-author:              Thiago Fernandes Dias
-maintainer:          thiago.fernandesdias235@gmail.com
+author:              Author name here
+maintainer:          example@example.com
 copyright:           2024 Author name here
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
                      CHANGELOG.md
 
-executable Lista4
+executable Lista6
   hs-source-dirs:      src
   main-is:             Main.hs
   other-modules:       Ex1,
@@ -27,7 +29,8 @@ executable Lista4
                        Ex9,
                        Ex10,
                        Ex11,
-                       Ex12
+                       Ex12,
+                       Ex13
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
   ghc-options:         -Wall

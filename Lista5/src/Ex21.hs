@@ -1,6 +1,11 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
+{-# HLINT ignore "Avoid lambda" #-}
+{-# HLINT ignore "Use const" #-}
+
 module Ex21 (Duo (..)) where
 
-data Duo a = Duo (Bool -> a)
+newtype Duo a = Duo (Bool -> a)
 
 instance Functor Duo where
   fmap f (Duo g) = Duo (\b -> f $ g b)

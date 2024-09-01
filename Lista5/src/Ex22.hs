@@ -22,4 +22,8 @@ instance Traversable Memory where
   -}
   traverse g (SplitCache x y mem) = SplitCache <$> g x <*> g y <*> traverse g mem
 
--- >> traverse (\x -> [x]) $ SplitCache 5 2 (UnifiedCache 10 (RAM 5))
+-- >>> traverse (\x -> [x]) $ SplitCache 5 2 (UnifiedCache 10 (RAM 5))
+-- [SplitCache 5 2 (UnifiedCache 10 (RAM 5))]
+
+-- >>> traverse (: []) $ SplitCache 5 2 (UnifiedCache 10 (RAM 5))
+-- [SplitCache 5 2 (UnifiedCache 10 (RAM 5))]

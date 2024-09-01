@@ -8,3 +8,5 @@ frutasDaArvore :: Tree String -> Int
 frutasDaArvore = foldr (\n acc -> acc + len n) 0
   where
     len = nothingToZero . convertStringToInt
+
+-- >>> frutasDaArvore (Node (Node (Leaf "5") "5" (Leaf "5")) "5" (Leaf "5"))

@@ -8,4 +8,10 @@ instance Functor Tree where
 
 instance Foldable Tree where
   foldMap f (Leaf a) = f a
-  foldMap f (Node l a r) = f a <> foldMap f l <> foldMap f r
+  foldMap f (Node l a r) = foldMap f l <> f a <> foldMap f r
+
+-- >>> (+ 5) <$> Node (Node (Leaf 5) 5 (Leaf 5)) 5 (Leaf 5)
+-- Node (Node (Leaf 10) 10 (Leaf 10)) 10 (Leaf 10)
+
+-- >>> foldr (++) "" (Node (Node (Leaf "5") "5" (Leaf "5")) "5" (Leaf "5"))
+-- "55555"

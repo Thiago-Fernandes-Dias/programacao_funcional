@@ -1,5 +1,3 @@
-module Ex16_a_19 (RLE (..), rleCons, encode, decode) where
-
 data RLE a = Repeat Int a (RLE a) | End deriving (Eq, Show)
 
 instance Foldable RLE where

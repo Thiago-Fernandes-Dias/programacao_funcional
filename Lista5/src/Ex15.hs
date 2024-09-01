@@ -17,3 +17,9 @@ instance Functor Pair where
 instance Applicative Pair where
   pure x = Pair x x
   Pair f g <*> Pair x y = Pair (f x) (g y)
+
+-- >>> pure (+) <*> Pair 4 5 <*> Pair 6 5
+-- Pair 10 10
+
+-- >>> pure (+) <*> Identity 4 <*> Identity 5
+-- Identity 9
